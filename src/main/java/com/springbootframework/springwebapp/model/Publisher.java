@@ -13,9 +13,6 @@ public class Publisher {
 
     private String name;
     private String address;
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "book_id", nullable = false)
-    private Book book;
 
     public Publisher() {
     }
@@ -23,12 +20,6 @@ public class Publisher {
     public Publisher(String name, String address) {
         this.name = name;
         this.address = address;
-    }
-
-    public Publisher(String name, String address, Book book) {
-        this.name = name;
-        this.address = address;
-        this.book = book;
     }
 
     public long getId() {
@@ -53,13 +44,5 @@ public class Publisher {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public Book getBook() {
-        return book;
-    }
-
-    public void setBook(Book book) {
-        this.book = book;
     }
 }

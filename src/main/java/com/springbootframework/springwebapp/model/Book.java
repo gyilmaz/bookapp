@@ -12,9 +12,7 @@ public class Book {
     private String title;
     private String isbn;
 
-    @OneToOne(fetch = FetchType.LAZY,
-            cascade =  CascadeType.ALL,
-            mappedBy = "book")
+    @OneToOne
     private Publisher publisher;
 
     @ManyToMany
